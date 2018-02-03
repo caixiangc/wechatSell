@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>   <!--在log配置文件中 命名一定要规范，logback 配置文件写成 logback-spring.xml ,spring boot 约定大于配置-->
+    <appender name="consoleLog" class="ch.qos.logback.core.ConsoleAppender">  <!--appender标签就是 你要实现功能的模块，这里是实现，控制台输出日志，class 就是你要实现这个模块需要加载的类-->
+        <layout class="ch.qos.logback.classic.PatternLayout"> <!--layout标签就是布局，pattern标签就是 打印输出的格式-->
+            <pattern>
+                %d - %msg - %n
+            </pattern>
+        </layout>
+    </appender>
+
+    <appender name="fileInforLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level> <!--根据范围来过滤那些error信息-->
+            <onMatch>DENY</onMatch> <!--这里的标签 是LevelFilter 里面内置定义好的-->
+            <onMismatch>ACCEPT</onMismatch> <!--DENY如果匹配到了 就不执行 ，ACCEPT 就执行，NEUTRAL(中立) 就是忽略这条规则(appender)，然后执行下条规则看看是否满足条件 -->
+        </filter>
+        <encoder>
+            <pattern>
+                %d--%msg--%n
+            </pattern>
+        </encoder>
+        <!--滚动策略，是基于时间滚动的-->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--路径,下面的* 就是以时间命名-->
+            <fileNamePattern>/Users/apple/Downloads/logger/sell/info.%d.log</fileNamePattern>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="fileErrorLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level> <!--这里也会把error信息打印出来，level标签是会把 >= 的级别给打印出来-->
+        </filter>
+        <encoder>
+            <pattern>
+                %d--%msg--%n
+            </pattern>
+        </encoder>
+        <!--滚动策略，是基于时间滚动的-->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--路径,下面的* 就是以时间命名-->
+            <fileNamePattern>/Users/apple/Downloads/logger/sell/error.%d.log</fileNamePattern>
+        </rollingPolicy>
+    </appender>
+
+    <root level="info">    <!--root标签 就是使你下面要加载的模块全局有效-->
+        <appender-ref ref="consoleLog"/>
+        <appender-ref ref="fileInforLog"/>
+        <appender-ref ref="fileErrorLog"/>
+    </root>
+</configuration>
