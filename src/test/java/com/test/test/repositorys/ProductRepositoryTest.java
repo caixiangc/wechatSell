@@ -1,14 +1,12 @@
 package com.test.test.repositorys;
 
-import com.test.test.domain.ProductCategory;
+import com.test.test.dataobject.ProductCategory;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Arrays;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * @author 浙外吴彦祖
@@ -23,6 +21,7 @@ public class ProductRepositoryTest {
         List<Integer> list = Arrays.asList(3,4,5);
 
         List<ProductCategory> result = repository.findByCategoryTypeIn(list);
-        Assert.assertNotEquals(0,result.size());
+        //Assert.assertNotEquals(0,result.size());
+        Assert.assertNotSame(0,result.size());
     }
 }

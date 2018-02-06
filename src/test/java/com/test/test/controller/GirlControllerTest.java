@@ -1,14 +1,8 @@
 package com.test.test.controller;
 
-import com.test.test.domain.Girl;
-import com.test.test.repositorys.GirlRepository;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * @author 浙外吴彦祖

@@ -1,7 +1,6 @@
-package com.test.test.domain;
+package com.test.test.dataobject;
 
 import org.hibernate.annotations.DynamicUpdate;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

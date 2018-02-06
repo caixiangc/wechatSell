@@ -1,7 +1,6 @@
 package com.test.test.controller;
 
-import com.test.test.domain.Girl;
-import com.test.test.domain.ProductCategory;
+import com.test.test.dataobject.Girl;
 import com.test.test.repositorys.GirlRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

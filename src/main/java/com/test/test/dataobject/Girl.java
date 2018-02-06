@@ -1,4 +1,4 @@
-package com.test.test.domain;
+package com.test.test.dataobject;
 
 import org.hibernate.validator.constraints.NotBlank;
 

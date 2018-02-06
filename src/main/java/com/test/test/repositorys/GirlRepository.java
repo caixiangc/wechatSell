@@ -1,7 +1,6 @@
 package com.test.test.repositorys;
 
-import com.test.test.domain.Girl;
-import com.test.test.domain.ProductCategory;
+import com.test.test.dataobject.Girl;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
