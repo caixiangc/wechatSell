@@ -10,6 +10,7 @@ import com.test.test.service.ProductService;
 import com.test.test.utils.ResultVOUtil;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,6 +35,9 @@ public class BuyerProductController {
     private CategoryService categoryService;
 
     @GetMapping("/list")   //@GetMapping 后面不能写 分号
+    @Cacheable(cacheNames = "product",key = "123")
+    //Cacheable这个注解 访问的流程是：会访问list() 方法，然后会有一个ResultVO返回值，然后通过上面给的cacheName 和key，会设置一个redis，redis里面存储的就是返回值的内容
+    //如果是CachePut()那么每次都会执行这个方法，并且每次都存储，而Cacheable则 不会每次都执行方法，缓存信息和方法都存储下来了当再次访问的时候不会调用后台程序，从而减小服务器压力。
     public ResultVO list(){
         //1. 查询所有上架商品。
         List<ProductInfo> productInfoList  = productService.findByProductUpStatus();

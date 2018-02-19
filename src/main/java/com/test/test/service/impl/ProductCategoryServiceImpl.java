@@ -35,6 +35,12 @@ public class ProductCategoryServiceImpl implements CategoryService {
     }
 
     @Override
+    public ProductCategory save(ProductCategory productCategory) {
+
+        return productRepository.save(productCategory);
+    }
+
+    @Override
     public ProductCategory AddOne(ProductCategory productCategory) {
         // 在如果需要传入多个对象的时候，不必一个一个写参数，只要传个对象就行，浏览器url里面只要穿需要传的但是这边取得时候，名字一定要对应的上（最好和数据库对象里面定义的变量一样），就算为空也没关系，因为我们定义的时候就是Integer对象
         ProductCategory productCategory1 = new ProductCategory(productCategory.getCategoryName(),productCategory.getCategoryType());

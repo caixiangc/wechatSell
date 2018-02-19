@@ -19,5 +19,6 @@ public interface CategoryService {
     //商品种类的新增
     ProductCategory AddOne(ProductCategory productCategory);
 
-    //和修改 todo 商品种类的修改
+    //和修改(新增) todo 商品种类的修改
+    ProductCategory save(ProductCategory productCategory);
 }

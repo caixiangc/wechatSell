@@ -1,4 +1,4 @@
-package com.test.test.controller;
+package com.test.test.controller.test;
 
 import com.test.test.dataobject.ProductCategory;
 import com.test.test.service.CategoryService;

@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    #url: jdbc:mysql://127.0.0.1:3306/sell
+    url: jdbc:mysql://127.0.0.1:3306/sell?characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 251128856
+  jpa:
+    show-sql: true
+  jackson:
+    default-property-inclusion: non_null
+server:
+  port: 8086
+  context-path: /sell
+#logging:
+#  level:
+#  com.test.test.dataobject.mapper : trace
+#mybatis:  #这个注解是 让程序知道 我们写的xml sql 在哪里 ，，classpath 就是 resource 目录
+#  config-location: classpath: mapper/*.xml

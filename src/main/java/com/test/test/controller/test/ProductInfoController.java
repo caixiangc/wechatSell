@@ -1,4 +1,4 @@
-package com.test.test.controller;
+package com.test.test.controller.test;
 
 import com.test.test.dataobject.ProductInfo;
 import com.test.test.repositorys.ProductInfoRepository;

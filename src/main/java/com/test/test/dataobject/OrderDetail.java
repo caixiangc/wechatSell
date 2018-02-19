@@ -24,7 +24,7 @@ public class OrderDetail {
     //商品单价
     private BigDecimal productPrice;
     //商品数量
-    private Integer productQuality;
+    private Integer productQuantity; //数据库里面的字段名 一定要和 DAO 映射里面的变量相同，在传参数的时候也要相同
     private String productIcon;
 
 

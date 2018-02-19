@@ -7,6 +7,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
+ * OrderMaster 就是一个个实在的订单 ，一个人可能有很多张订单
  * @author 浙外吴彦祖
  * @data 2018/2/6 上午9:39
  */

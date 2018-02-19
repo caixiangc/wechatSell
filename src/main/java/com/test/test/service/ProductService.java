@@ -1,6 +1,7 @@
 package com.test.test.service;
 
 import com.test.test.dataobject.ProductInfo;
+import com.test.test.dto.CartDTO;
 import org.springframework.data.domain.Page;
 
 import java.util.List;
@@ -26,7 +27,16 @@ public interface ProductService {
     List<ProductInfo> findByCategoryStatusByparams(Integer status);
 
     //加库存
+    void addStock(List<CartDTO> cartDTOList);
 
     //减库存
+    void decreaseStock(List<CartDTO> cartDTOList);
+
+    //上架
+    ProductInfo onSale(String orderId);
+    //下架
+    ProductInfo offSale(String orderId);
+
+    ProductInfo save(ProductInfo productInfo);
 
 }

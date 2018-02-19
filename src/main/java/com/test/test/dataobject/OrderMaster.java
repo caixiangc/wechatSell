@@ -7,8 +7,10 @@ import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author 浙外吴彦祖
@@ -35,5 +37,10 @@ public class OrderMaster {
     private Date createTime;
 
     private Date updateTime;
+
+    // 当两个数据库有关联并且， 一对多的时候，我们要重新生成一个对象。
+    // @Transient //在数据库表 和 DAO 对应的时候 会忽略下面那个字段
+    // private List<OrderDetail> orderDetailList;
+
 
 }

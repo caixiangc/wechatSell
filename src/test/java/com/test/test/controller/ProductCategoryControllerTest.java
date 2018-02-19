@@ -1,5 +1,6 @@
 package com.test.test.controller;
 
+import com.test.test.controller.test.ProductCategoryController;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 

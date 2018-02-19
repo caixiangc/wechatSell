@@ -1,0 +1,17 @@
+<!--
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//">  &lt;!&ndash;这个文件之所以能够被捕捉到是因为在入口文件 里面写了检测代码&ndash;&gt;
+<mapper namespace="com.test.test.dataobject.mapper.ProductCategoryMapper"> &lt;!&ndash;namespace里面填 mapper 的路径、附加的还要填上mapper的mapper名字&ndash;&gt;
+    &lt;!&ndash;一般会写一个返回的结果,type 就是返回值的类型（要和对象做一些关联性的绑定）&ndash;&gt;
+    <resultMap id="BaseResultMap" type="com.test.test.dataobject.ProductCategory"> &lt;!&ndash;这个是 实现定义一个返回的数据类型，要和我们数据库映射对象绑定&ndash;&gt;
+        <id column="category_id" property="categoryId" jdbcType="INTEGER" ></id> &lt;!&ndash;下面填 你需要的字段&ndash;&gt;
+        <id column="category_name" property="categoryName" jdbcType="VARCHAR" ></id>&lt;!&ndash;字段名 ==》 映射成的变量 ==》 及其类型&ndash;&gt;
+        <id column="category_type" property="categoryType" jdbcType="INTEGER" ></id> &lt;!&ndash;之所以要映射成categoryId 是因为 方便我们后面数据库对象&ndash;&gt;
+    </resultMap>
+    <select id="selectByCategoryType" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select category_id,category_name,category_type &lt;!&ndash;这里就是单纯的sql 语句，只有结果是需要映射成BaseResultMap这个数据类型的&ndash;&gt;
+        from product_category
+        where category_type = #{category_type,jdbcType=INTEGER} &lt;!&ndash;传经来的变量放在#{}这个里面&ndash;&gt;
+    </select>
+
+</mapper>-->
